@@ -5,19 +5,17 @@ description:        "Jekyll version of the Massively theme by HTML5UP"
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-facebook:           jian.gao.58118
-instagram:          gaosc07
-github:             Jian-99
+
 
 # Comments
 disqus_shortname:   default
 
 # Social
 analytics-id:       "default"
-twitter:            default
-# facebook:           default
-# instagram:          default
-# github:             default
+# twitter:            default
+facebook:           jian.gao.58118
+instagram:          gaosc07
+github:             Jian-99
 
 # personal
 location:           Vancouver BC, Canada
