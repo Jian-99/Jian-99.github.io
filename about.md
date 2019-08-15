@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jian
+title: Jian - Timeline
 description: When building a website it's helpful to see what the focus of your site is.
 sitemap:
     priority: 0.7
