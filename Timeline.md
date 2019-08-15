@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Jian - Timeline
-description: When building a website it's helpful to see what the focus of your site is.
+description: Timeline of mine.
 sitemap:
     priority: 0.7
     lastmod: 2017-11-02
