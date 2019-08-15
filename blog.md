@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Jian - CV
+title: Jian
 description: Every great website starts with a great homepage.
 sitemap:
     priority: 1.0
