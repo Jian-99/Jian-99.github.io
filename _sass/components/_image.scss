@@ -53,9 +53,8 @@
 		}
 
 		&.main {
-			overflow: hidden;
 			display: block;
-			margin: (_size(element-margin) ) 0;
+			margin: (_size(element-margin) * 2) 0;
 			width: 100%;
 
 			&:first-child {
