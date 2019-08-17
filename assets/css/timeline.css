@@ -12,10 +12,7 @@
 @date: 120px;
 @dotborder: 4px;
 @dot: 11px;
-@line: 4px;
-
-@font-title: "Saira", sans-serif;
-@font-text: "Chivo", sans-serif;
+@liner: 4px;
 
 /* Base */
 
@@ -28,7 +25,7 @@
 /* Timeline */
 
 .timeline {
-  border-left: @line solid @color-primary;
+  border-left: @liner solid @color-primary;
   border-bottom-right-radius: @radius;
   border-top-right-radius: @radius;
   background: fade(@color-light, 15%);
@@ -37,7 +34,7 @@
   margin: @spacing auto;
   letter-spacing: 0.5px;
   position: relative;
-  line-height: 2em;
+  liner-height: 2em;
   font-size: 1.03em;
   padding: @spacing;
   list-style: none;
@@ -66,7 +63,7 @@
     }
 
     &:before {
-      left: (((@date * 0.6) + @spacing + @line + @dot + (@dotborder * 2)) * 1.5) *
+      left: (((@date * 0.6) + @spacing + @liner + @dot + (@dotborder * 2)) * 1.5) *
         -1;
       color: fade(@color-light, 40%);
       content: attr(data-date);
@@ -79,7 +76,7 @@
 
     &:after {
       box-shadow: 0 0 0 @dotborder fade(@color-primary, 100%);
-      left: (@spacing + @line + (@dot * 0.35)) * -1;
+      left: (@spacing + @liner + (@dot * 0.35)) * -1;
       background: lighten(@background, 5%);
       border-radius: 50%;
       height: @dot;
