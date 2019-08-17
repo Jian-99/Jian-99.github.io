@@ -7,7 +7,93 @@ sitemap:
     lastmod: 2017-11-02
     changefreq: weekly
 ---
-<link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" />
+<!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
+<style>
+@background: #788888;
+
+@color-primary: #604ffc;
+@color-light: white;
+@color-dim: #1c6d6d;
+@spacing: 50px;
+@radius: 4px;
+
+@date: 120px;
+@dotborder: 4px;
+@dot: 11px;
+@liner: 4px;
+
+#content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Timeline */
+
+.timeline {
+  border-left: @liner solid @color-primary;
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+  background: fade(@color-light, 15%);
+  color: fade(white, 90%);
+  font-family: @font-text;
+  margin: @spacing auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  liner-height: 2em;
+  font-size: 1.03em;
+  padding: @spacing;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  max-width: 50%;
+
+
+  .event {
+    border-bottom: 1px dashed fade(@color-light, 50%);
+    padding-bottom: (@spacing * 0.5);
+    margin-bottom: @spacing;
+    position: relative;
+
+    &:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      top: 0;
+    }
+
+    &:before {
+      left: (((@date * 0.6) + @spacing + @liner + @dot + (@dotborder * 2)) * 1.5) *
+        -1;
+      color: fade(@color-light, 40%);
+      content: attr(data-date);
+      text-align: right;
+      font-weight: 100;
+      font-size: 0.9em;
+      min-width: @date;
+      font-family: @font-title;
+    }
+
+    &:after {
+      box-shadow: 0 0 0 @dotborder fade(@color-primary, 100%);
+      left: (@spacing + @liner + (@dot * 0.35)) * -1;
+      background: lighten(@background, 5%);
+      border-radius: 50%;
+      height: @dot;
+      width: @dot;
+      content: "";
+      top: 5px;
+    }
+  }
+}
+
+</style>
+
 
   <header class="major">
     <h2>Timeline</h2>
