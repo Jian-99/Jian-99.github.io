@@ -17,6 +17,7 @@ sitemap:
 /*media queries*/
 html {
   box-sizing: border-box;
+  background: white;
 }
 
 *, *:before, *:after {
@@ -35,6 +36,7 @@ body {
   margin: 3.125em auto;
   padding: 1em 5em 1em;
   max-width: 1000px;
+  background: white;
 }
 
 /*h1 {
@@ -49,12 +51,14 @@ body {
    - useful timesaver if there is a lengthy list
 */
 .timeline {
-  line-height: 1.5em;
-  font-size: 14px;
+  line-height: 1.8em;
+  font-size: 15px;
   transition: all 0.4s ease;
   position: relative;
   counter-reset: section;
   top: -20px;
+  bottom: -50px;
+  background: white;
 }
 .timeline:before {
   content: "";
@@ -72,14 +76,16 @@ body {
   background-color: #222222;
 }
 .timeline--entry__title {
-  color: white;
-  background-color: #212931;
+  color: #212931;
+  background-color: white;
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: 300;
   font-size: 1.5rem;
   padding: 1em;
 }
-.timeline--entry__title:before {
+
+
+/*.timeline--entry__title:before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -89,12 +95,17 @@ body {
   border-bottom: 10px solid transparent;
   left: -1em;
   border-right: 10px solid #212931;
-}
+}*/
+
+
 .timeline--entry__detail {
-  background-color: #ffffff;
+  color: white;
+  background-color: #212931;
   padding: 1em;
   margin: 0;
 }
+
+
 .timeline--entry:before {
   content: "";
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -161,19 +172,19 @@ body {
 
   <div class="timeline">
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">Title A</dt>
+      <dt class="timeline--entry__title">2019</dt>
       <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">Title B</dt>
+      <dt class="timeline--entry__title">2018</dt>
       <dd class="timeline--entry__detail"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">Title C</dt>
+      <dt class="timeline--entry__title">2017</dt>
       <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">Title D</dt>
+      <dt class="timeline--entry__title">2016</dt>
       <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
 
