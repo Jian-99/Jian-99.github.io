@@ -10,91 +10,95 @@ sitemap:
 <!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
 <style>
 
-  @background: #788888;
+  $bg: #4D4545
 
-  @color-primary: #604ffc;
-  @color-light: white;
-  @color-dim: #1c6d6d;
-  @spacing: 50px;
-  @radius: 4px;
+  $color: #ED8D8D
 
-  @date: 120px;
-  @dotborder: 4px;
-  @dot: 11px;
-  @line: 4px;
+  $font-stack: 'Lato', sans-serif
 
-  body {
-    background: @background;
-    font-size: 16px;
-  }
+  html,
+  body
+      font: 100% $font-stack
+      font-weight: 300
+      height: 100%
 
-#content {
-  margin-top: @spacing;
-  text-align: center;
-}
 
-/* Timeline */
-.timeline {
-  border-left: @line solid @color-primary;
-  border-bottom-right-radius: @radius;
-  border-top-right-radius: @radius;
-  background: fade(@color-light, 15%);
-  color: fade(white, 90%);
-  font-family: @font-text;
-  margin: @spacing auto;
-  letter-spacing: 0.5px;
-  position: relative;
-  line-height: 2em;
-  font-size: 1.03em;
-  padding: @spacing;
-  list-style: none;
-  text-align: left;
-  font-weight: 100;
-  max-width: 50%;
+  .blue-bg
 
-  .event {
-    border-bottom: 1px dashed fade(@color-light, 50%);
-    padding-bottom: (@spacing * 0.5);
-    margin-bottom: @spacing;
-    position: relative;
+      color: $color
+      height: 100%
 
-    &:last-of-type {
-      padding-bottom: 0;
-      margin-bottom: 0;
-      border: none;
-    }
+  .circle
+      font-weight: bold
+      padding: 15px 20px
+      border-radius: 50%
+      background-color: $color
+      color: $bg
+      max-height: 50px
+      z-index: 2
 
-    &:before,
-    &:after {
-      position: absolute;
-      display: block;
-      top: 0;
-    }
+  .how-it-works.row
+      display: flex
+      .col-2
+          display: inline-flex
+          align-self: stretch
+          align-items: center
+          justify-content: center
+          &::after
+              content: ''
+              position: absolute
+              border-left: 3px solid $color
+              z-index: 1
+      .col-2.bottom
+          &::after
+              height: 50%
+              left: 50%
+              top: 50%
+      .col-2.full
+          &::after
+              height: 100%
+              left: calc(50% - 3px)
+      .col-2.top
+          &::after
+              height: 50%
+              left: 50%
+              top: 0
 
-    &:before {
-      left: (((@date * 0.6) + @spacing + @line + @dot + (@dotborder * 2)) * 1.5) *
-        -1;
-      color: fade(@color-light, 40%);
-      content: attr(data-date);
-      text-align: right;
-      font-weight: 100;
-      font-size: 0.9em;
-      min-width: @date;
-      font-family: @font-title;
-    }
 
-    &:after {
-      box-shadow: 0 0 0 @dotborder fade(@color-primary, 100%);
-      left: (@spacing + @line + (@dot * 0.35)) * -1;
-      background: lighten(@background, 5%);
-      border-radius: 50%;
-      height: @dot;
-      width: @dot;
-      content: "";
-      top: 5px;
-    }
-  }
-}
+
+  .timeline
+
+      div
+          padding: 0
+          height: 40px
+      hr
+          border-top: 3px solid $color
+          margin: 0
+          top: 17px
+          position: relative
+      .col-2
+          display: flex
+          overflow: hidden
+      .corner
+          border: 3px solid $color
+          width: 100%
+          position: relative
+          border-radius: 15px
+      .top-right
+          left: 50%
+          top: -50%
+      .left-bottom
+          left: -50%
+          top: calc(50% - 3px)
+      .top-left
+          left: -50%
+          top: -50%
+      .right-bottom
+          left: 50%
+          top: calc(50% - 3px)
+
+
+
 </style>
 
 
@@ -102,30 +106,63 @@ sitemap:
     <h2>Timeline</h2>
   </header>
 
-  <div id="content">
 
-    <ul class="timeline">
-      <li class="event" data-date="65Million B.C.">
-        <h3>Dinosaurs Roamed the Earth!</h3>
-        <p>RAWWWWWWRRR 🐢🦂</p>
-      </li>
-      <li class="event" data-date="2005">
-        <h3>Creative Component Launched</h3>
-        <p>"We can be all things to all people!" 📣</p>
-      </li>
-      <li class="event" data-date="2009">
-        <h3>Squareflair was Born</h3>
-        <p></p> <p>"We can be all things to Squarespace users!" 📣</p>
-      </li>
-      <li class="event" data-date="November 15, 2018">
-        <h3>Squareflair Today</h3>
-
-        <p>"LMAO We design and build from scratch!" 📣<p/> <p>When we say <em><strong>100% custom</strong></em> we mean it— and we build all sites on the Squarespace Developer platform.<p/>
-  <p>Did you know that all of our pixels are hand-forged from the rarest of subpixels grown and harvested in the <em>Nerd Forest</em>? <br>🤜💥🤛</p>
-
-        <p><strong>Our success can be measured by lives and brands enhanced by 9+ years of 100% Squarespace-focused service!</strong></p>
-
-
-      </li>
-    </ul>
+<div class="container-fluid blue-bg">
+  <div class="container">
+    <h2 class="pb-3 pt-2">Vertical Left-Right Timeline</h2>
+    <!--first section-->
+    <div class="row align-items-center how-it-works">
+      <div class="col-2 text-center bottom">
+        <div class="circle">1</div>
+      </div>
+      <div class="col-6">
+        <h5>Fully Responsive</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+    <!--path between 1-2-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--second section-->
+    <div class="row align-items-center justify-content-end how-it-works">
+      <div class="col-6 text-right">
+        <h5>Using Bootstrap</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center full">
+        <div class="circle">2</div>
+      </div>
+    </div>
+    <!--path between 2-3-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--third section-->
+    <div class="row align-items-center how-it-works">
+      <div class="col-2 text-center top">
+        <div class="circle">3</div>
+      </div>
+      <div class="col-6">
+        <h5>Now with Pug and Sass</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
   </div>
+</div>
