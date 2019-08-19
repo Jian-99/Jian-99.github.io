@@ -1,5 +1,5 @@
 ---
-layout: p
+layout: post
 title: Jian - Timeline
 description: Timeline of mine.
 sitemap:
@@ -10,14 +10,13 @@ sitemap:
 <!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
 <style>
 /*- Screen Sizes*/
-/*import fonts
+/*import fonts*/
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 /*media queries*/
 html {
   box-sizing: border-box;
-  background: white;
 }
 
 *, *:before, *:after {
@@ -36,14 +35,13 @@ body {
   margin: 3.125em auto;
   padding: 1em 5em 1em;
   max-width: 1000px;
-  background: white;
 }
 
-/*h1 {
+h1 {
   color: white;
   font-family: "Open Sans", "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
   text-align: center;
-}*/
+}
 
 /* - &:nth-child(1) {
 			 grid-area: entry1;
@@ -51,14 +49,12 @@ body {
    - useful timesaver if there is a lengthy list
 */
 .timeline {
-  line-height: 1.8em;
-  font-size: 15px;
+  line-height: 1.5em;
+  font-size: 14px;
   transition: all 0.4s ease;
   position: relative;
   counter-reset: section;
   top: -20px;
-  bottom: -50px;
-  background: white;
 }
 .timeline:before {
   content: "";
@@ -73,19 +69,17 @@ body {
 
 .timeline--entry {
   position: relative;
-  background-color: #222222;
+  background-color: #eeeeee;
 }
 .timeline--entry__title {
-  color: #212931;
-  background-color: white;
+  color: white;
+  background-color: #mix(#212931, #ffffff, 50%);
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 1em;
 }
-
-
-/*.timeline--entry__title:before {
+.timeline--entry__title:before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -94,18 +88,13 @@ body {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   left: -1em;
-  border-right: 10px solid #212931;
-}*/
-
-
+  border-right: 10px solid #mix(#212931, #ffffff, 50%);
+}
 .timeline--entry__detail {
-  color: white;
-  background-color: #424950;
+  background-color: #dddddd;
   padding: 1em;
   margin: 0;
 }
-
-
 .timeline--entry:before {
   content: "";
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -122,7 +111,7 @@ body {
   counter-increment: section;
   content: counter(section);
   text-shadow: 0 1px 0 #424242;
-  left: -4.4em;
+  left: -4.5em;
 }
 
 @supports (display: grid) {
@@ -164,6 +153,8 @@ body {
     }
   }
 }
+
+
 </style>
 
 
@@ -172,19 +163,19 @@ body {
 
   <div class="timeline">
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019</dt>
-      <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
-    </dl>
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2018</dt>
-      <dd class="timeline--entry__detail"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
-    </dl>
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2017</dt>
+      <dt class="timeline--entry__title">Title A</dt>
       <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
     <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2016</dt>
+      <dt class="timeline--entry__title">Title B</dt>
+      <dd class="timeline--entry__detail"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
+    </dl>
+    <dl class="timeline--entry">
+      <dt class="timeline--entry__title">Title C</dt>
+      <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
+    </dl>
+    <dl class="timeline--entry">
+      <dt class="timeline--entry__title">Title D</dt>
       <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
 
