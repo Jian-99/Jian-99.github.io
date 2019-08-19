@@ -10,10 +10,7 @@ sitemap:
 <!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
 <style>
 /*- Screen Sizes*/
-/*import fonts*/
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=Oswald");
+
 /*media queries*/
 html {
   box-sizing: border-box;
@@ -68,14 +65,14 @@ body {
   background-color: #212931;
 }
 .timeline--entry__title {
-  color: white;
-  background-color: #212931;
+  color: #212931;
+  background-color: white;
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: 300;
   font-size: 1rem;
   padding: 1em;
 }
-.timeline--entry__title:before {
+/* .timeline--entry__title:before {
   content: "";
   display: inline-block;
   width: 1em;
@@ -85,9 +82,10 @@ body {
   border-bottom: 10px solid transparent;
   left: -1em;
   border-right: 10px solid #212931;
-}
+} */
 .timeline--entry__detail {
-  background-color: #dddddd;
+  color: white;
+  background-color: #212931;
   padding: 1em;
   margin: 0;
 }
