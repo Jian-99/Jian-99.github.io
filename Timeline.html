@@ -22,13 +22,14 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  background: white;
 }
 
 body {
-  background-color: #444444;
+  background-color: white;
   font-family: "Open Sans", "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
   font-size: 0.875em;
-  color: #212121;
+  //color: #212121;
   line-height: 1.5;
 }
 
@@ -51,7 +52,7 @@ body {
    - useful timesaver if there is a lengthy list
 */
 .timeline {
-  line-height: 1.8em;
+  line-height: 2em;
   font-size: 15px;
   transition: all 0.4s ease;
   position: relative;
@@ -60,6 +61,7 @@ body {
   bottom: -50px;
   background: white;
 }
+
 .timeline:before {
   content: "";
   width: 10px;
@@ -73,7 +75,7 @@ body {
 
 .timeline--entry {
   position: relative;
-  background-color: #222222;
+//  background-color: #222222;
 }
 .timeline--entry__title {
   color: #212931;
@@ -100,7 +102,7 @@ body {
 
 .timeline--entry__detail {
   color: white;
-  background-color: #424950;
+  background-color: #212931;
   padding: 1em;
   margin: 0;
 }
@@ -156,7 +158,7 @@ body {
     }
     .timeline--entry:nth-of-type(even):not(:nth-of-type(odd)) .timeline--entry__title:before {
       left: 100%;
-      border-left: 10px solid #mix(#212931, #ffffff, 50%);
+      border-left: 10px solid #212931;
       border-right: 0;
     }
     .timeline--entry:nth-of-type(even):before {
