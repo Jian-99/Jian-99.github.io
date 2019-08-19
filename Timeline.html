@@ -10,7 +10,7 @@ sitemap:
 <!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
 <style>
 /*- Screen Sizes*/
-/*import fonts*/
+/*import fonts
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Oswald");
@@ -37,11 +37,11 @@ body {
   max-width: 1000px;
 }
 
-h1 {
+/*h1 {
   color: white;
   font-family: "Open Sans", "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
   text-align: center;
-}
+}*/
 
 /* - &:nth-child(1) {
 			 grid-area: entry1;
@@ -69,14 +69,14 @@ h1 {
 
 .timeline--entry {
   position: relative;
-  background-color: #eeeeee;
+  background-color: #222222;
 }
 .timeline--entry__title {
   color: white;
-  background-color: #mix(#212931, #ffffff, 50%);
+  background-color: #212931;
   font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 1em;
 }
 .timeline--entry__title:before {
@@ -88,10 +88,10 @@ h1 {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   left: -1em;
-  border-right: 10px solid #mix(#212931, #ffffff, 50%);
+  border-right: 10px solid #212931;
 }
 .timeline--entry__detail {
-  background-color: #dddddd;
+  background-color: #ffffff;
   padding: 1em;
   margin: 0;
 }
@@ -111,7 +111,7 @@ h1 {
   counter-increment: section;
   content: counter(section);
   text-shadow: 0 1px 0 #424242;
-  left: -4.5em;
+  left: -4.4em;
 }
 
 @supports (display: grid) {
@@ -153,8 +153,6 @@ h1 {
     }
   }
 }
-
-
 </style>
 
 
@@ -164,7 +162,7 @@ h1 {
   <div class="timeline">
     <dl class="timeline--entry">
       <dt class="timeline--entry__title">Title A</dt>
-      <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
+      <dd class="timeline--entry__detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</dd>
     </dl>
     <dl class="timeline--entry">
       <dt class="timeline--entry__title">Title B</dt>
