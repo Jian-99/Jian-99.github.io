@@ -174,6 +174,60 @@ blockquote {
 <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script>
+  $(function(){
+
+    window.sr = ScrollReveal();
+
+    if ($(window).width() < 768) {
+
+    	if ($('.timeline-content').hasClass('js--fadeInLeft')) {
+    		$('.timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
+    	}
+
+    	sr.reveal('.js--fadeInRight', {
+  	    origin: 'right',
+  	    distance: '300px',
+  	    easing: 'ease-in-out',
+  	    duration: 800,
+  	  });
+
+    } else {
+
+    	sr.reveal('.js--fadeInLeft', {
+  	    origin: 'left',
+  	    distance: '300px',
+  		  easing: 'ease-in-out',
+  	    duration: 800,
+  	  });
+
+  	  sr.reveal('.js--fadeInRight', {
+  	    origin: 'right',
+  	    distance: '300px',
+  	    easing: 'ease-in-out',
+  	    duration: 800,
+  	  });
+
+    }
+
+    sr.reveal('.js--fadeInLeft', {
+  	    origin: 'left',
+  	    distance: '300px',
+  		  easing: 'ease-in-out',
+  	    duration: 800,
+  	  });
+
+  	  sr.reveal('.js--fadeInRight', {
+  	    origin: 'right',
+  	    distance: '300px',
+  	    easing: 'ease-in-out',
+  	    duration: 800,
+  	  });
+
+
+  });
+</script>
+
 <section class="timeline">
   <div class="container">
     <div class="timeline-item">
