@@ -9,225 +9,285 @@ sitemap:
 ---
 <!-- <link rel="stylesheet" href="{{ "/assets/css/timeline.css" | absolute_url }}" /> -->
 <style>
-/*- Screen Sizes*/
-
-/*media queries*/
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body {
-  background-color: white;
-  font-family: "Open Sans", "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-  font-size: 1.2em;
-  color: #212121;
-  line-height: 1.5;
-}
-
-.wrapper {
-  margin: 3.125em auto;
-  padding: 1em 3em 1em;
-  max-width: 1000px;
+section {
+  padding: 100px 0;
 }
 
 
-
-/* - &:nth-child(1) {
-			 grid-area: entry1;
-		 }
-   - useful timesaver if there is a lengthy list
-*/
 .timeline {
-  line-height: 2em;
-  font-size: 14px;
-  transition: all 0.4s ease;
   position: relative;
-  counter-reset: section;
-  top: -20px;
 }
-.timeline:before {
-  content: "";
-  width: 8px;
-  height: 100%;
-  background: #212931;
+.timeline::before {
+  content: '';
+  background: #C5CAE9;
+  width: 5px;
+  height: 95%;
   position: absolute;
-  top: 0;
-  left: -3.313em;
-  border-radius: 40px 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.timeline--entry {
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+.timeline-item::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.timeline-content {
   position: relative;
-  background-color: #212931;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
 }
-.timeline--entry__title {
-  color: #212931;
-  background-color: white;
-  font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-weight: 300;
-  font-size: 2rem;
-  padding: 0.8em;
-}
-
-/* .timeline--entry__title:before {
-  content: "";
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+.timeline-content::after {
+  content: '';
   position: absolute;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  left: -1em;
-  border-right: 10px solid #212931;
-} */
-
-.timeline--entry__detail {
-  color: white;
-  background-color: #212931;
-  padding: 1.2em;
-  margin: 0;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f5f5f5;
 }
-.timeline--entry:before {
-  content: "";
-  font-family: "Oswald", Georgia, Cambria, "Times New Roman", Times, serif;
-  color: #212931;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2em;
-  height: 2em;
-  background-color: #ffffff;
-  border: 0.2em solid #212931;
+
+.timeline-img {
+  width: 30px;
+  height: 30px;
+  background: #3F51B5;
   border-radius: 50%;
   position: absolute;
-  //counter-increment: section;
-  //content: counter(section);
-  //text-shadow: 0 1px 0 #424242;
-  left: -4.8em;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
 }
 
-@supports (display: grid) {
-  @media (min-width: 768px) {
-    .timeline {
-      display: grid;
-      grid-gap: 4.75em;
-      grid-template-areas: ".  entry1" "entry2  ." ". entry3" "entry4 ." ". entry5";
-    }
-    .timeline:before {
-      left: 49.3%;
-    }
 
-    .timeline--entry:nth-child(1) {
-      grid-area: entry1;
-    }
-    .timeline--entry:nth-child(2) {
-      grid-area: entry2;
-    }
-    .timeline--entry:nth-child(3) {
-      grid-area: entry3;
-    }
-    .timeline--entry:nth-child(4) {
-      grid-area: entry4;
-    }
-    .timeline--entry:nth-child(5) {
-      grid-area: entry5;
-    }
-    .timeline--entry:nth-of-type(odd):before {
-      left: -3.6em;
-    }
-    .timeline--entry:nth-of-type(even):not(:nth-of-type(odd)) .timeline--entry__title:before {
-      left: 100%;
-      border-left: 10px solid #212931;
-      border-right: 0;
-    }
-    .timeline--entry:nth-of-type(even):before {
-      left: 26.7em;
-      /* right: 26.7em; */
-    }
+.timeline-card {
+  padding: 0 !important;
+}
+.timeline-card p {
+  padding: 0 20px;
+}
+.timeline-card a {
+  margin-left: 20px;
+}
+
+.timeline-item .timeline-img-header {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url("https://picsum.photos/1000/800/?random") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-img-header {
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.timeline-img-header h2 {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+
+blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3F51B5;
+  padding: 0 20px;
+}
+
+.date {
+  background: #FF4081;
+  display: inline-block;
+  color: #FFFFFF;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 50px;
+  }
+  .timeline .timeline-img {
+    left: 50px;
+  }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+  }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
   }
 }
-
 
 </style>
 
 
 
-<div class="wrapper">
 
-  <div class="timeline">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019.08</dt>
-      <dd class="timeline--entry__detail">Research: Facial Recognition and Machine Learning
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/Projects/Face.jpg" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019.04</dt>
-      <dd class="timeline--entry__detail">Case Study: An Analysis on the Development of Unmanned Aerial Vehicles
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/Projects/Drones.jpg" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
+<section class="timeline">
+  <div class="container">
+    <div class="timeline-item">
+      <div class="timeline-img"></div>
 
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019.03-04</dt>
-      <dd class="timeline--entry__detail">Project: Bluetooth-Controlled Coin Picking Robot
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/C/07.jpeg" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
+      <div class="timeline-content js--fadeInLeft">
+        <h2>Title</h2>
+        <div class="date">1 MAY 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+          <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+      </div>
+    </div>
 
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019.02-03</dt>
-      <dd class="timeline--entry__detail">Project: Reflow Oven Controller
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/C/06.jpeg" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
+    <div class="timeline-item">
 
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2019.02</dt>
-      <dd class="timeline--entry__detail">Project: Heart Rate Monitor
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/Projects/pulse-sensor.jpg" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card js--fadeInRight">
+        <div class="timeline-img-header">
+          <h2>Card Title</h2>
+        </div>
+        <div class="date">25 MAY 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content js--fadeInLeft">
+        <div class="date">3 JUN 2016</div>
+        <h2>Quote</h2>
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content js--fadeInRight">
+        <h2>Title</h2>
+        <div class="date">22 JUN 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card js--fadeInLeft">
+        <div class="timeline-img-header">
+          <h2>Card Title</h2>
+        </div>
+        <div class="date">10 JULY 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card js--fadeInRight">
+        <div class="timeline-img-header">
+          <h2>Card Title</h2>
+        </div>
+        <div class="date">30 JULY 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content js--fadeInLeft">
+        <div class="date">5 AUG 2016</div>
+        <h2>Quote</h2>
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card js--fadeInRight">
+        <div class="timeline-img-header">
+          <h2>Card Title</h2>
+        </div>
+        <div class="date">19 AUG 2016</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content js--fadeInLeft">
+        <div class="date">1 SEP 2016</div>
+        <h2>Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+
+      </div>
+    </div>
 
   </div>
-
-
-
-  <div class="timeline">
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2018.11</dt>
-      <dd class="timeline--entry__detail">Project: Construction of a CPU using Verilog
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/Projects/CPU.png" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
-
-    <dl class="timeline--entry">
-      <dt class="timeline--entry__title">2018.11</dt>
-      <dd class="timeline--entry__detail">Project: Construction of a CPU using Verilog
-        <p>
-        <a href="#" class="image main"><img src="{{ "/photos/Projects/CPU.png" | absolute_url }}" alt="" /></a>
-        </p>
-      </dd>
-    </dl>
-
-  </div>
-
-</div>
+</section>
