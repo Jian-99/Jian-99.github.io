@@ -9,7 +9,7 @@ sitemap:
 ---
 
  <!-- Text stuff -->
- <h2>Title: Data Aquisition System for Aircrafts<sup>*</sup></br></br>
+ <h2>Title: Data Aquisition System for Aircrafts</br></br>
    Date: Sep 2019 - Apr, 2020</br></br>
    Location: UBC, Vancouver</br></br>
    Team: UBC Aerodesign (Advanced Class, Subteam Avionics)
@@ -31,11 +31,17 @@ sitemap:
    <h3>Key objectives of subteam avionics</h3>
  </header>
  <p>The ultimate task fell upon us was to develop a comprehensive data aquisition system that demostrates the key parameters of our designed aircraft while it's in the air.
- The work was divided into two main sections with one on the software side and another being related to hardwares. Although my personal focus was mainly on the latter, the final product of our flight control system can be visualized by the following picture.</p>
+ The work was divided into two main sections with one on the software side and another being related to hardwares. Although my personal focus was mainly on the latter, the final product of our ground station can be visualized by the following picture.</p>
 
     <span class="image fit"><img src="{{ "/photos/Projects/Aero_DAQ.png" | absolute_url }}" alt="" /></span>
 
-    <div class="row">
+<p>In order to deliver the aquired parameters accurately, we chose Arduino as the platform where we intergrate all sensors to simultaneously extract the value of altitude, orientation, location, and so on. </p>
+
+<p>That being said, such work of integration might not be ealiy achieved. Owing to certain specifications of our sensors in use, we ended up running multiple Arduino timers to make sure the different hardware pieces work perfectly in parallel.
+The final connection scheme is shown below. </p>
+
+    <span class="image fit"><img src="{{ "/photos/Projects/Aero_Arduino.png" | absolute_url }}" alt="" /></span>
+    <!-- <div class="row">
       <div class="6u 12u$(small)">
         <span class="image fit"><img src="{{ "/photos/Projects/391/01.jpeg" | absolute_url }}" alt="" /></span>
       </div>
@@ -51,7 +57,7 @@ sitemap:
       <div class="6u 12u$(small)">
         <span class="image fit"><img src="{{ "/photos/Projects/391/04.jpeg" | absolute_url }}" alt="" /></span>
       </div>
-    </div>
+    </div> -->
 
 <!-- <a href="https://youtu.be/MAlUJVSO0oU" class="button" style="margin-bottom:10px">Video Demo 1</a>
 <a href="https://youtu.be/DWtlECUm4Ok" class="button">Video Demo 2</a> -->
