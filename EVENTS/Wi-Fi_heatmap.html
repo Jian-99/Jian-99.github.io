@@ -18,17 +18,23 @@ sitemap:
  <hr />
 
  <header>
-   <h3>Key design objectives of subteam avionics</h3>
+   <h3>Backgroud and Context</h3>
  </header>
- <p>The ultimate task that fell upon us was to develop a comprehensive data aquisition system that demostrates the key parameters of our designed aircraft while it's in the air.
- The work was divided into two main sections with one on the software side and another being related to hardwares. Although my personal focus was mainly on the latter, the final product of our ground station can be visualized by the following picture.</p>
 
-    <span class="image fit"><img src="{{ "/photos/Projects/Aero_DAQ.png" | absolute_url }}" alt="" /></span>
+<p>The strength and coverage of Wi-Fi signals vary in an indoor environment due to physical barriers such as walls, as well as other forms of interference. 
+  This often results in the home occupant experiencing weak Wi-Fi signals at specific locations of the house, 
+  depending on the setup of the router and boosters. Given the current “work from home” situation due to COVID-19, 
+  the ability to remotely assess the strength of the signal inside a home is important for occupants and a major concern for network providers. 
+</p>
 
-<p>In order to deliver the aquired parameters accurately, we chose Arduino as the platform where we intergrated all sensors to simultaneously extract the values of altitude, orientation, location, and so on. </p>
+<p>There are already pre-existing applications that allow measuring Wi-Fi signal strength by running the app at specific locations of the house. However, the usability of them is greatly limited due to the uncertainty of the data in the mapping process and the counterintuitive user interface. In addition, most Wi-Fi measuring apps are only providing data at one location, which does not provide users with the necessary information needed to determine the size of the area that has valid Wi-Fi coverage. 
+</p>
 
-<p>That being said, such work of integration might not be ealiy achieved. Owing to certain specifications of our sensors in use, we ended up running multiple Arduino timers to make sure the different hardware pieces work perfectly in parallel.
-The final connection scheme is shown below. </p>
+<p>To facilitate this, Augmented Reality (AR) can be used to overlay this information on to a 2D floor map model of the space. The latter may be generated via LiDAR data, which is becoming widely available on devices such as iPad Pro and iPhone 12 Pro. A coherent LiDAR system captures the amplitude and phase of the returning signal and accounts for laser return time to generate a 3D model of the home surroundings. The 3D LiDAR data will be utilized to create a 2D floor map that shows the strength of Wi-Fi around the entire indoor environment of the house. This will help internet providers improve the overall internet coverage by deciding where to place routers and boosters, optimizing strength of the Wi-Fi signal inside houses.
+</p>
+
+<p>This project will be focused on creating an application utilizing the LiDAR sensors found on the iPad Pro. The advantage this brings that preexisting apps currently do not have is the ability to generate floor plan models and provide accurate indoor positioning for heatmap generation. With LiDAR, we believe it would be possible to integrate both of these attributes together and provide a seamless experience to users surveying sites for Wi-Fi heatmaps.
+</p>
 
 <div class="row">
   <div class="6u 12u$(small)">
@@ -39,41 +45,6 @@ The final connection scheme is shown below. </p>
   </div>
 </div>
 
-<p>Another picture above is me using UBC's wind tunnel to calibrate MPXV7002 which senses pressure from the mechincal structure of the pitot tube.</p>
-
-<header>
-  <h3>Competition Results</h3>
-</header>
-<p>Since non-essential international travel to the US was banned due to COVID-19, the competition was delivered in an online format which, I believe, significantly relied on the presentation and two rounds of test flight results.
-Anyway, our design team won the 1st and the 3rd place in Regular Class and Advanced Class respectively. All competition results from the past years can be found here: </p>
-
-<div class="6u 12u$(small)">
-  <a href="https://www.saeaerodesign.com" class="button"  style="margin-bottom:10px">SAE Aerodesign</a>
-</div>
-
-<span class="image fit"><img src="{{ "/photos/Projects/Aero_results.jpeg" | absolute_url }}" alt="" /></span>
-
-    <!-- <div class="row">
-      <div class="6u 12u$(small)">
-        <span class="image fit"><img src="{{ "/photos/Projects/391/01.jpeg" | absolute_url }}" alt="" /></span>
-      </div>
-      <div class="6u 12u$(small)">
-        <span class="image fit"><img src="{{ "/photos/Projects/391/05.jpeg" | absolute_url }}" alt="" /></span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="6u 12u$(small)">
-        <span class="image fit"><img src="{{ "/photos/Projects/391/03.jpeg" | absolute_url }}" alt="" /></span>
-      </div>
-      <div class="6u 12u$(small)">
-        <span class="image fit"><img src="{{ "/photos/Projects/391/04.jpeg" | absolute_url }}" alt="" /></span>
-      </div>
-    </div> -->
-
-<!-- <a href="https://youtu.be/MAlUJVSO0oU" class="button" style="margin-bottom:10px">Video Demo 1</a>
-<a href="https://youtu.be/DWtlECUm4Ok" class="button">Video Demo 2</a> -->
-
 <hr />
 
  <div class="row">
@@ -81,6 +52,6 @@ Anyway, our design team won the 1st and the 3rd place in Regular Class and Advan
      <a href="javascript:window.history.back()" class="button"  style="margin-bottom:10px">Go Back</a>
    </div>
    <div class="6u 12u$(small)">
-     <p>Full presentation slides can be obtained upon request.</p>
+    <a href="/documents/MS2 Presentation.pdf" download="Jian's MS2 Presentation" class="button special icon fa-download">Milestone 2 Presentation Slides</a>
    </div>
  </div>
