@@ -28,8 +28,9 @@ sitemap:
 </video> -->
 
 <p> A Web Application was developed to serve for online messaging. 
-  On the client site, all the chat rooms and respective messages were obtained from MongoDB database and rendered dynamically. 
+  On the client side, all the chat rooms and respective messages were obtained from MongoDB database and rendered dynamically. 
   Thus, when an active user is sending a message to the chat, it gets broadcasted to all the users in this chat and also stored in database. 
+  ES6 generators pull the messages out of the database 10 at a time whenever the user scrolls to the top of the screen in a chatroom. 
   On the server side, session cookies protect resources from unauthorized accessing.
   Finally, a JavaScript sanitization mechanism was implemented to defend the users against Cross-Site Scripting attacks.</p>
 
